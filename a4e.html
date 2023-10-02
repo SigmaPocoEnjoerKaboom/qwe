@@ -1,10 +1,9 @@
-function createCalculator() {
-    const calculator = document.createElement('div');
-    calculator.style.width = '400px';
-    calculator.style.padding = '40px';
-    calculator.style.border = '1px solid #ccc';
-    calculator.style.background = '#f9f9f9';
-    calculator.innerHTML = '
+<!DOCTYPE html>
+<html>
+<head>
+    <title>жопа</title>
+</head>
+    <body>
         <h2> ну тіпа да </h2>
         <input type= "text" id="display" readonly>
         <br>
@@ -27,29 +26,7 @@ function createCalculator() {
         <button onClick="appendToDisplay('0')">0</button>
         <button onClick="calculateResult()">=</button>
         <button onClick="appendToDisplay('/')">/</button>
-  ';
+  <script scr="calculator.js"></script>
+    </body>
+</html>
 
-document.body.appendChild(calculator);
-}
-
-let currentInput = '';
-
-    function appendToDisplay(value) {
-      currentInput += value;
-     document.getElementById('display').value = currentInput;
-}
-    function clearDisplay () {
-      currentINput = '';
-     document.getElementById('display').value = '';
-    }
-
-    function calculateResult() {
-      try {
-        currentInput = eval(currentInput);
-        display.value = cyrrentInput;
-      } catch (error) {
-        display.value = 'Помилка';
-      }
-    }     
-
-createCalculator();
