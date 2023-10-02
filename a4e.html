@@ -1,10 +1,11 @@
-<!DOCTYPE hmtl>
-<html>
-  <head>
-    <title>чо чо </title>
-  </head>
-  <body>
-    <h1> ну тіпа да </h1>
+function createCalculator() {
+const calculator = document.createElement('div');
+calculator.style.width = '400px';
+calculator.style.padding = '40px';
+calculator.style.border = '1px solid #ccc';
+calculator.style.background = '#f9f9f9';
+calculator.innerHTML = '
+    <h2> ну тіпа да </h2>
     <input type= "text" id="display" readonly>
     <br>
     <button onClick="clearDisplay()">P</button>
@@ -26,19 +27,20 @@
     <button onClick="appendToDisplay('0')">0</button>
     <button onClick="calculateResult()">=</button>
     <button onClick="appendToDisplay('/')">/</button>
-  </body>
-  <script>
-    let display = document.getElementById('display');
-    let currentInput = '';
+  ';
+
+document.body.appendChild(calculator);
+}
+
+let currentInput = '';
 
     function appendToDisplay(value) {
       currentInput += value;
-      display.value = currentInput;
-    }
-
+     document.getElementById('display').value = currentInput;
+}
     function clearDisplay () {
       currentINput = '';
-      display.value = '';
+     document.getElementById('display').value = '';
     }
 
     function calculateResult() {
@@ -49,5 +51,5 @@
         display.value = 'Помилка';
       }
     }     
-  </script>
-</html>
+
+createCalculator();
